@@ -31,3 +31,10 @@ fi
 echo "Top 3 most frequent ERROR messages:"
 echo "$error_lines" | grep -o "ERROR .*" | sort | uniq -c | sort -nr | head -n 3
 
+# 1. Check if a log file path is provided as an argument
+if [ $# -eq 0 ]; then
+  echo "Error: Please provide the log file path as an argument."
+  exit 1
+fi
+
+log_file_path="$1"
